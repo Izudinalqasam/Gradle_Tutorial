@@ -1,0 +1,56 @@
+task putOnSocks {
+    doLast {
+        println "Putting On Socks."
+    }
+}
+
+task putOnShoes {
+    dependsOn putOnSocks
+    doLast {
+        println "Putting on shoes."
+    }
+}
+
+task eatBreakfast {
+    // finalized will executed next, after this task is executed
+    finalizedBy "brushYourTeeth"
+    doLast {
+        println "Om nom nom breakfast"
+    }
+}
+
+task brushYourTeeth {
+    doLast {
+        println "Brushie brushie"
+    }
+}
+
+task takeShower {
+    doLast {
+        println  "Taking Shower."
+    }
+}
+
+task putOnFragrance {
+    // using shouldRunAfter will executed this task but not strictly has to follow,
+    // there situation it will be ignored
+    shouldRunAfter "takeShower"
+    doLast {
+        println "Smellin fresh"
+    }
+}
+
+task getReady {
+    dependsOn = ["takeShower", "eatBreakfast", "putOnShoes"]
+}
+
+// this declare that putOnShoes must run after takeShower task
+putOnShoes.mustRunAfter takeShower
+
+// this task will execute the task name start with putOn
+task getEquipped {
+    dependsOn tasks.matching { task -> task.name.startsWith("putOn") }
+    doLast {
+        println "All geared up!"
+    }
+}

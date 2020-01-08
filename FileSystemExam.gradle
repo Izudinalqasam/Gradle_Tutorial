@@ -1,0 +1,43 @@
+// if you don't use include, this task will copy everything inside src into dst
+task copyFiles(type: Copy){
+    from 'src'
+    include '*.txt'
+    into 'dst'
+}
+
+// copy file with specified subfolder of build folder (destination folder)
+task copyImageFolder(type: Copy){
+    from('documents'){
+        include '*.jpg'
+        into 'jpeg'
+    }
+
+    from('donwloads'){
+        include '*.txt'
+        into 'txt'
+    }
+
+    into 'build'
+}
+
+// make zip file 
+task zipFiles(type: Zip){
+    baseName = 'downloads'
+    destinationDir = file('build')
+    from 'downloads'
+}
+
+task zipFilesFolders(type: Zip){
+    archiveName = 'downloads'
+    destinationDir = file('build')
+
+    from('downloads') {
+        include '*.text'
+        into 'text'
+    }
+}
+
+// for deleting the build directory
+task deleteBuild(type: Delete){
+    delete 'build'
+}

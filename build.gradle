@@ -1,0 +1,7 @@
+apply from: "dependsOnExam.gradle"
+apply from: "FileSystemExam.gradle"
+
+task copy(type: Copy) {
+    from "src"
+    into "dst"
+}
