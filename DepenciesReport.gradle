@@ -1,0 +1,10 @@
+Report 
+this dependencies report can be used to handle conflict artifect (version of the dependencies), 
+Gradle will resolve the conflict version by using the latest version of the dependencies artifact
+
+1. to get dependencies report you can run this command, it includes transitive dependencies and all dependencies configuration (Runtime, Compile, testCompile, and testRuntime)
+gradle dependencies
+2. to see dependencies specific configuration report you can use this command (runtime is configuration dependencies)
+gradle dependencies --configuration runtime
+3. you can see specific dependencies by this command (common-logging is specific dependencies you want to know)
+gradle dependencyInsight --dependency commons-logging

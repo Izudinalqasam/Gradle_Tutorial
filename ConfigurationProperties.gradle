@@ -1,0 +1,18 @@
+one configuration can extend from other configuration, if you declare dependencies on specific configuration, it will add and exist only in that configurations
+e.g testCompile configuration extends the compile configuration. so the testCompile will be included dependencies of compile configuration
+
+if configurations provided by java plugin does not fit you want. you can custom a configuration like bellow. 
+the custom configurations will be shown in the dependencies report
+configurations {
+    custom
+}
+
+dependencies {
+    custom 'com.google.guava:guava:18.0'
+}
+
+// you can donwload dependencies from remote repositories and bundle them in our project somehow like below
+task copyDependencies(type: Copy){
+    from configurations.custom
+    into 'build/libs'
+}
