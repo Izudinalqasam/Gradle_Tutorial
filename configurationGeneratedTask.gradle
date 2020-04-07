@@ -1,0 +1,5 @@
+Variant dependency configuration there are 2 type, compile and runtime.
+the runtime is extend compile configuration, 
+so if your variant is free and paid it will be freeCompile, freeRuntime, paidCompile, paidRuntime.
+
+there are 3 kind generated task

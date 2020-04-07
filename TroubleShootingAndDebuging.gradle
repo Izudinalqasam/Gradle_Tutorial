@@ -1,0 +1,10 @@
+//Logging Level
+1. it will show the kind log below (Using command -q)
+- Error = will show log error message
+- Quiet = level for log messages, that should be this way
+2. it will show the kind log below and the point 1 (it is default log of gradle)
+- Warning & LifeCycle = log what tasks are currently being run, as well as the total time the build took, and whether or not it was successful
+3. it will show the kind log below and the point 1, 2 (using command -i)
+- info = information of what gradle is up to, it details how long each task takes to complete, and high level event (like when Gradle connect to its deamon)
+4. it wiill show the entire log, point 1, 2, 3 ,4.  (using command -d)
+- Debug = spew a ton of useful information on gradle's internal working

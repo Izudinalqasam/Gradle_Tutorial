@@ -1,0 +1,12 @@
+task printGreetingParameterising << {
+    println greeting
+}
+
+
+// you can declare the properties to custom your properties need (like greeting below)
+// in the same file of build.gradle or through gradle.properties file or from command line/terminal
+// properties which passed through command line will replace the properties you have been declared
+// either from gradle.properties or ext closure like below
+ext {
+    greeting = "Hello from inside the build script"
+}

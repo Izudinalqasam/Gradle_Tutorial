@@ -1,0 +1,16 @@
+// to build multiple or another build type you can build 2 separate buildType
+android {
+    buildType {
+        qaTeam {
+
+        }
+    }
+}
+
+android {
+    buildType {
+        sitTeam {
+            
+        }
+    }
+}

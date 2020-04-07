@@ -1,0 +1,10 @@
+Gradle Wrapper is used to download gradle toolkit to run gradle, the gradle it self is composed of .jar, .properties, and file script for Unix and Max
+
+Gradle wrapper fulfill everything thats
+
+Gradle folder/directory in android
+1. .gradle -> Gradle store information for incremental build support (your task input, output)
+2. .idea -> Android studio store its model of your project
+3. build -> it is place your build output there
+4. gradle -> store wrapper jar and wrapper properties
+5. local.properties -> how gradle can configure out where the android sdk place

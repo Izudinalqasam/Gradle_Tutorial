@@ -1,0 +1,7 @@
+Build Lifecycle
+- initialization
+it is concerned with setting up multi project build
+- configuration
+where the build script is executing which configure all project task which is one to run and the order
+- execution
+all the task action of all the task that are choosen are executed in the proper order

@@ -1,0 +1,14 @@
+class HelloTask extends DefaultTask {
+    String firstName
+
+    @TaskAction
+    void doAcction{
+        println "Hi $firstName, Hello from Custom Type task"
+    }
+}
+
+// you can custom the variabel inside Custom Type Task like below
+// Don't worry the Getter and Setter methdo will be handled by groovy
+task helloCustomTask(type: HelloTask){
+    firstName ='Jeremy'
+}
