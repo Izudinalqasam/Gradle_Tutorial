@@ -1,0 +1,18 @@
+// you can declare depedencies with full artifact or by groovy group
+dependencies {
+    compile 'com.google.guava:guava:18.0'
+    
+    // or
+
+    compile group: 'com.google.guava' name: 'guava', version: '18.0'
+}
+
+// you can use depedencies from a file like below
+dependencies {
+    compile files('libs/foo.jar', 'libs/bar.jar')
+}
+
+// or you can filter to specific depedencies file you want like below
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+}

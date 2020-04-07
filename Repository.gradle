@@ -1,0 +1,36 @@
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+// Maven and Ivy block is same of the purpose, which to download plugin from remote repositories
+repositories {
+    maven {
+        url "https://repo.foo.org/m2"
+    }
+}
+
+// this is used if you want to download specific plugin using credential (resolving managed depedencies)
+repositories {
+    ivy {
+        url 'https://repo.foo.org/ivy'
+        credentials {
+            username 'user'
+            password 'secret'
+        }
+    }
+}
+
+// Gradle  support number of protocols for accessing repositories (http, https, file-based, sftp)
+repositories {
+    ivy {
+        url 'file:///home/user/repo'
+    }
+}
